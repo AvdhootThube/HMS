@@ -1,0 +1,80 @@
+<%- include('./header.ejs')  %> 
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="container">
+                <div class="card border-dark">
+                    <div class="card-header bg-dark text-white">
+                        <h4>Doctor Information</h4>
+                    </div>
+                    <div class="row g-0 bg-light">
+                        <div class="col-md-3 px-5">
+                            <i class="bi bi-person-fill mx-auto" style="font-size: calc(8vw + 6vh + 4vmin);"></i>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="name" class="form-label text-muted">Name</label>
+                                        <input
+                                        type="text"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 bg-light"
+                                        id="name"
+                                        value="<%= doctorDetails.name %>"
+                                        disabled
+                                        />
+                                    </div>
+                                    <div class="offset-md-2 col-md-4">
+                                        <label for="email" class="form-label text-muted">Email</label>
+                                        <input
+                                        type="email"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 bg-light"
+                                        id="email"
+                                        value="<%= doctorDetails.email %>"
+                                        disabled
+                                        />
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-4">
+                                        <label for="mobNo" class="form-label text-muted"
+                                        >Mobile Number</label
+                                        >
+                                        <input
+                                        type="text"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 bg-light"
+                                        id="mobNo"
+                                        value="<%= doctorDetails.mobileNo %>"
+                                        disabled
+                                        />
+                                    </div>
+                                    <div class="offset-md-2 col-md-4">
+                                        <label for="dob" class="form-label text-muted">Date of Birth</label>
+                                        <input
+                                        type="text"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 bg-light"
+                                        id="dob"
+                                        value="<%= doctorDetails.dob %>"
+                                        disabled
+                                        />
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-4">
+                                        <label for="dept" class="form-label text-muted"
+                                        >Department</label
+                                        >
+                                        <input
+                                        type="text"
+                                        class="form-control border-top-0 border-right-0 border-left-0 rounded-0 bg-light"
+                                        id="dept"
+                                        value="<%= doctorDetails.department %>"
+                                        disabled
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+<%- include('./footer.ejs')  %> 

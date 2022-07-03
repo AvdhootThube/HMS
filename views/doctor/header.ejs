@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <title>HMS</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-info flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/doctor/dashboard">
+            <img src="/assets/images/HMSlogo.png" alt="HMS" id="HMSLogo">
+        </a>
+        <!-- <input type="text" class="form-control form-control-primary w-100" placeholder="Search..."> -->
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link text-white" href="/doctor/logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 bg-light d-none d-md-block sidebar">
+                <div class="left-sidebar">
+                    <ul class="nav flex-column sidebar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/doctor/dashboard">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/doctor/edit-profile">
+                                Account
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/doctor/change-password">
+                                Change Password
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>

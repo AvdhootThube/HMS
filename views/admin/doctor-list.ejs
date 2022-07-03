@@ -1,0 +1,118 @@
+<%- include('./header.ejs')  %>             
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <h3>Doctor</h3>
+                <% if ( err_msg != undefined ){ %>
+                    <span class="error_validate flash_msg mx-7 text-danger" aria-hidden="true" >
+                        <%= err_msg %>
+                    </span>
+                <% }%>
+                <% if(success_msg!=undefined){ %>
+                    <span class="error_validate flash_msg mx-7 text-success" aria-hidden="true" >
+                        <%= success_msg %>
+                    </span>
+                <% }%>
+                <ul class="nav nav-tabs mt-4 overflow-x border-0" id="myTab" role="tablist">
+                    <li class="nav-item ">
+                        <button class="nav-link active" id="active-tab" data-bs-toggle="tab" data-bs-target="#activedoctor" type="button" role="tab" aria-controls="active" aria-selected="true">Active</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link font-regular" id="blocked-tab" data-bs-toggle="tab" data-bs-target="#blockeddoctor" type="button" role="tab" aria-controls="blocked" aria-selected="false">Blocked</button>
+                    </li>
+                </ul>
+                <div class="tab-content container" id="nav-tabContent">
+                    <div class="tab-pane fade show active border-0" id="activedoctor" role="tabpanel" aria-labelledby="active-tab">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Mobile No.</th>
+                                        <th scope="col">Department</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (doctorsList.length < 1) { %>
+                                        <tr>
+                                            <td colspan="5"><h6>No active doctor</h6></td>
+                                        </tr>
+                                    <% } else { %>
+                                        <% for( var i = 0; i < doctorsList.length; i++ ) { %>
+                                            <tr>
+                                                <td><%= doctorsList[i].name %></td>
+                                                <td><%= doctorsList[i].email %></td>
+                                                <td><%= doctorsList[i].mobileNo %></td>
+                                                <td><%= doctorsList[i].department %></td>
+                                                <td class="text-end">
+                                                    <a 
+                                                        href="/admin/doctor-details" 
+                                                        class="mx-1 btn btn-sm btn-dark text-white"
+                                                        onclick="location.href=this.href+'/'+ `<%= doctorsList[i]._id %>`;return false"
+                                                    >View</a>
+                                                    <a 
+                                                        href="/admin/block-doctor" 
+                                                        class="mx-1 btn btn-sm btn-danger text-white rounded-circle"
+                                                        onclick="location.href=this.href+'/'+ `<%= doctorsList[i]._id %>`;return false"
+                                                    ><i class="bi bi-dash-lg"></i></a>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %> 
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade border-0" id="blockeddoctor" role="tabpanel" aria-labelledby="blocked-tab">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Mobile No.</th>
+                                        <th scope="col">Department</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (blockedDoctorList.length < 1) { %>
+                                        <tr>
+                                            <td colspan="7"><h6>No blocked doctor</h6></td>
+                                        </tr>
+                                    <% } else { %>
+                                        <% for( var i = 0; i < blockedDoctorList.length; i++ ) { %>
+                                            <tr>
+                                                <td><%= blockedDoctorList[i].name %></td>
+                                                <td><%= blockedDoctorList[i].email %></td>
+                                                <td><%= blockedDoctorList[i].mobileNo %></td>
+                                                <td><%= blockedDoctorList[i].department %></td>
+                                                <td class="text-end">
+                                                    <a 
+                                                        href="/admin/doctor-details" 
+                                                        class="mx-1 btn btn-sm btn-dark text-white"
+                                                        onclick="location.href=this.href+'/'+ `<%=blockedDoctorList[i]._id %>`;return false"
+                                                    >View</a>
+                                                    <a 
+                                                        href="/admin/accept-doctor" 
+                                                        class="mx-1 btn btn-sm btn-success text-white rounded-circle"
+                                                        onclick="location.href=this.href+'/'+ `<%=blockedDoctorList[i]._id %>`;return false"
+                                                    ><i class="bi bi-check-lg"></i></a>
+                                                    <a 
+                                                        href="/admin/delete-doctor" 
+                                                        class="mx-1 btn btn-sm btn-danger text-white rounded-circle"
+                                                        onclick="location.href=this.href+'/'+ `<%=blockedDoctorList[i]._id %>`;return false"
+                                                    ><i class="bi bi-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+<%- include('./footer.ejs')  %>

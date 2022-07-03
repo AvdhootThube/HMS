@@ -1,0 +1,29 @@
+html, body{
+  height: 100%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: beige;
+}
+.card.card-section {
+  background-color: #68b38a;
+  max-width: 25%;
+  margin: auto;
+}
+.card.card-section-signup {
+  background-color: #68b38a;
+  max-width: 50%;
+  max-height: 75%;
+  margin: auto;
+}
+.card .card-header h5 {
+  color: beige;
+}
+label {
+  color: beige;
+}
+.submit-button {
+  color: beige;
+  background-color: #fd784f;
+  border: 0;
+}

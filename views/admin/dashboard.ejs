@@ -1,0 +1,57 @@
+<%- include('./header.ejs')  %>             
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <h3>Applications</h3>
+                <% if ( err_msg != undefined ){ %>
+                    <span class="error_validate flash_msg mx-7 text-danger" aria-hidden="true" >
+                        <%= err_msg %>
+                    </span>
+                <% }%>
+                <% if(success_msg!=undefined){ %>
+                    <span class="error_validate flash_msg mx-7 text-success" aria-hidden="true" >
+                        <%= success_msg %>
+                    </span>
+                <% }%>
+                <hr>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Mobile No.</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Status</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (pendingApplications.length < 1) { %>
+                                <tr>
+                                    <td colspan="6">No doctor applications to review</td>
+                                </tr>
+                            <% } else { %>
+                                <% for( let i = 0; i < pendingApplications.length; i++ ) { %>
+                                    <tr>
+                                        <td class="text-truncate" data-toogle="tooltip" data-placement="bottom" title="<%= pendingApplications[i].name %>"><%= pendingApplications[i].name %></td>
+                                        <td class="text-truncate" data-toogle="tooltip" data-placement="bottom" title="<%= pendingApplications[i].email %>"><%= pendingApplications[i].email %></td>
+                                        <td class="text-truncate" data-toogle="tooltip" data-placement="bottom" title="<%= pendingApplications[i].mobileNo %>"><%= pendingApplications[i].mobileNo %></td>
+                                        <td class="text-truncate" data-toogle="tooltip" data-placement="bottom" title="<%= pendingApplications[i].department %>"><%= pendingApplications[i].department %></td>
+                                        <td class="text-truncate" data-toogle="tooltip" data-placement="bottom" title="<%= pendingApplications[i].adminVerification %>"><%= pendingApplications[i].adminVerification %></td>
+                                        <td class="text-end">
+                                            <a href="/admin/accept-application" class="btn btn-sm text-primary" onclick="location.href=this.href+'/'+`<%= pendingApplications[i]._id %>`;return false">
+                                                <i class="bi bi-check"></i>
+                                            </a>
+                                            <a href="/admin/reject-application" class="btn btn-sm text-danger" onclick="location.href=this.href+'/'+`<%= pendingApplications[i]._id %>`;return false">
+                                                <i class="bi bi-x"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <% } %> 
+                            <% } %> 
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+<%- include('./footer.ejs')  %>

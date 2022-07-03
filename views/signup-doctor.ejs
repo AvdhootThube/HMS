@@ -1,0 +1,67 @@
+<%- include('./header.ejs') %>
+<div class="row g-0">
+  <div class="col-6 card shadow mt-4 mb-3 card-section-signup">
+    <div class="col-12 card-header border-0 text-center">
+      <h5>Sign Up</h5>
+      <% if (err_msg!=undefined) { %>
+        <span class="flash_msg text-danger">
+         <%= err_msg %> 
+        </span>
+       <% } %>
+       <% if (success_msg!=undefined) { %>
+        <span class="flash_msg text-success">
+         <%= success_msg %> 
+        </span>
+       <% } %>
+    </div>
+    <div class="card-body">
+      <form action="/submit-doctor-registration" method="post">
+        <input type="hidden" name="role" value="doctor">
+        <div class="col-12 mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+        </div>
+        <div class="col-12 mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+        </div>
+        <div class="row g-3">
+          <div class="col-6 mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" autocomplete="off" placeholder="********">
+          </div>
+          <div class="col-6 mb-3">
+            <label for="cnfPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="cnfPassword" name="confirmPassword" autocomplete="off" placeholder="********">
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 mb-3">
+            <label for="mobNo" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" id="mobNo" name="mobileNo" placeholder="Your Mobile Number">
+          </div>
+            <div class="col-6 mb-3">
+                <label for="dept" class="form-label">Department</label>
+                <select name="dept" id="dept" class="form-select" required>
+                  <option value="#" selected="selected" hidden>Select a Department</option>
+                  <option value="Orthopaedic">Orthopaedic</option>
+                  <option value="Psychiatric">Psychiatric</option>
+                  <option value="ENT">ENT</option>
+                  <option value="Gynecologist">Gynecologist</option>
+                </select>
+            </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-12 text-center mb-3">
+            <button class="col-8 btn btn-primary border-0 submit-button" type="submit">Sign Up</button>
+          </div>
+        </div>
+      </form>
+      </div>
+      <div class="row text-center">
+        <p>Already have an account <a href="/" class="text-light"> Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('./footer.ejs') %>

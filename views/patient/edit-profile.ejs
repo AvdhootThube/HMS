@@ -1,0 +1,57 @@
+<%- include('./header.ejs')  %>
+<main class="offset-2 col-10 ">
+    <div class="mt-n8 pt-2 offset-md-2 col-md-8 offset-md-2 container bg-light border rounded-4">
+        <div class="col-md-12">
+            <h1 class="display-1"><i class="row justify-content-center bi bi-person-circle"></i></h1>
+            <h2 class="row justify-content-center">Edit Profile</h2>
+            <% if(err_msg!=undefined){ %>
+                <span class="row justify-content-center error_validate flash_msg text-danger">
+                    <%= err_msg %>
+                </span>
+            <% }%>
+            <% if(success_msg!=undefined){ %>
+                    <span class="row justify-content-center error_validate flash_msg text-success">
+                      <%= success_msg %>
+                    </span>
+            <% }%>
+        </div>
+        <div class="col-md-12">
+            <form action="/patient/submit-profile-changes" method="post" class="pt-4 row g-3 pb-4">
+                <div class="col-md-12">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" value="<%= user.name %>">
+                </div>
+                <div class="col-md-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control bg-muted" id="email" value="<%= user.email %>" readonly>
+                </div>
+                <div class="col-6">
+                    <label for="mobNo" class="form-label">Mobile Number</label>
+                    <input type="text" class="form-control" name="mobileNo" id="mobNo" value="<%= user.mobileNo %>">
+                </div>
+                <div class="col-6">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="text" class="form-control" name="dob" id="dob" value="<%= user.dob %>" placeholder="DD/MM/YYYY">
+                </div>
+                <div class="col-12">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Current Address" value="<%= user.address %>">
+                </div>
+                <div class="mt-4 col-3">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<script>
+    $(document).ready(function () {
+        var dob = $('#dob').val()
+        if (dob != null && dob !='') {
+            $('#dob').attr('readonly', true)
+        } else {
+            $('#dob').removeAttr('readonly')
+        }
+    })
+</script>
+<%- include('./footer.ejs')  %> 
