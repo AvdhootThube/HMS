@@ -30,7 +30,7 @@ const getRandomDoctor = async (dept) => {
 }
 
 const fetchAppointments = async (userEmail) => {
-    var appts = await Appointment.find({ patientEmail: userEmail }).sort([['apptDateTime', 1]])
+    var appts = await Appointment.find({ patientEmail: userEmail }).sort([['dateTime', 1]])
     return appts
 }
 
