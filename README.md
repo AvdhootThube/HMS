@@ -8,6 +8,7 @@ Project has functionality to book an appointment cancel an appointment for patie
 Project allows doctors to signup from the signup portal. Doctors need to be verified by admin order to be able to login
 Doctors can view appointments or cancel them.
 Here are some screenshots of this project.
+
 Login Page:
 ![image](https://user-images.githubusercontent.com/58938310/177297566-55f70d4f-0275-4fe3-86a5-529da96209c0.png)
 Signup for patients:
