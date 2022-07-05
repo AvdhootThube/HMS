@@ -30,7 +30,7 @@ Admin Dashboard (displays doctors that have signed up and waiting for approval):
 Appointments :
 ![image](https://user-images.githubusercontent.com/58938310/177299883-303f1237-c7ee-455e-85e0-e1ed9339d8ed.png)
 Doctors list :
-![image](https://user-images.githubusercontent.com/58938310/177299975-5188ff2d-7670-4d79-afb7-3092b4234bef.png)
+![image](https://user-images.githubusercontent.com/58938310/177301341-5a906035-4728-493f-9b21-e3de37998dce.png)
 Doctor detailed view:
 ![image](https://user-images.githubusercontent.com/58938310/177300097-2ebf330e-1088-4656-aa1b-cc16b484a2f0.png)
 Doctor dashboard:
