@@ -35,4 +35,8 @@ Doctor detailed view:
 ![image](https://user-images.githubusercontent.com/58938310/177300097-2ebf330e-1088-4656-aa1b-cc16b484a2f0.png)
 Doctor dashboard:
 ![image](https://user-images.githubusercontent.com/58938310/177300259-6e8e8dfb-745a-4a5e-bf26-5121dcff56ef.png)
+Microsoft Azure web apps:
+![image](https://user-images.githubusercontent.com/58938310/177301954-5aa8fed0-6fec-4cce-bf8f-0fc8fad3c681.png)
+Microsoft Azure Cosmos DB:
+![image](https://user-images.githubusercontent.com/58938310/177302179-042d12ec-8889-4d53-9e5a-6ffc97b478fc.png)
 
